@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"  data-theme="dark" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css and daisy ui cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/985549e602.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/logo.jpeg" type="image/x-icon">
+    <title>Track Taka</title>
+</head>
+<body id="Home">
+    <nav class="shadow-xl sticky top-0">
+        <div class="navbar md:w-11/12 xl:w-4/5 mx-auto text-t1" >
+            <div>
+                <img src="./images/logo.jpeg" alt="" class="w-10 cursor-pointer ">
+            </div>
+            <div class="ml-auto">
+                <div class="hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a href="#Home">Dashboard</a></li>
+                        <li><a href="#Create">Create</a></li>
+                        <li><a href="#Transaction">Transactions</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a href="#Home">Dashboard</a></li>
+                  <li><a href="#Create">Create</a></li>
+                  <li><a href="#Transaction">Transactions</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <main class="md:w-11/12 xl:w-4/5 mx-auto text-t1 py-5 lg:py-10 px-5">
+        <h1 class="text-t1 text-3xl font-medium">Dashboard</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 pt-10 text-t1">
+            <div class="flex justify-start items-center gap-5 text-white px-5 py-3 bg-gray-700 border rounded border-gray-500">
+                <i class="fa-solid fa-wallet text-3xl p-2 rounded bg-blue"></i>
+                <div>
+                    <h1 class="text-lg">wallet</h1>
+                    <span id="wallet" class="text-4xl font-bold">0</span>
+                </div>
+            </div>
+            <div class="flex justify-start items-center gap-5 text-white px-5 py-3 bg-gray-700 border rounded border-gray-500">
+                <i class="fa-solid fa-arrow-trend-up text-3xl p-2 rounded bg-green"></i>
+                <div>
+                    <h1 class="text-lg">income</h1>
+                    <span id="income" class="text-4xl font-bold">0</span>
+                </div>
+            </div>
+            <div class="flex justify-start items-center gap-5 text-white px-5 py-3 bg-gray-700 border rounded border-gray-500">
+                <i class="fa-solid fa-arrow-trend-down text-3xl p-2 rounded bg-red"></i>
+                <div>
+                    <h1 class="text-lg">expense</h1>
+                    <span id="expense" class="text-4xl font-bold">0</span>
+                </div>
+            </div>
+            <div class="flex justify-start items-center gap-5 text-white px-5 py-3 bg-gray-700 border rounded border-gray-500">
+                <i class="fa-solid fa-dollar-sign text-3xl px-4 py-2 rounded bg-yellow"></i>
+                <div>
+                    <h1 class="text-lg">transactions</h1>
+                    <span id="transactions" class="text-4xl font-bold">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="Create" class="pt-10 lg:pt-20">
+          <h1 class="text-t1 text-3xl font-medium">Create Transaction</h1>
+          <div class="text-t1 text-base my-10 md:w-2/3 lg:w-1/2 xl:w-2/5">
+              <label for="" class="my-4 block">Transaction Title<br>
+                  <input id="transactionTitle" type="text" name="" class="p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0">            
+              </label>
+              <label for="" class="my-4 block">Transaction Amount<br>
+                  <input  id="transactionAmount" type="number" name="" class="p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0">            
+              </label>
+              <label for="" class="my-4 block">Transaction Type<br>
+                  <select id="transactionType" class="select  p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0 text-base">
+                      <option id="transactionTypeFirstChild" disabled selected>select transaction type</option>
+                      <option>Income</option>
+                      <option>Expense</option>
+                    </select>            
+              </label>
+              <label for="" class="my-4 block">Transaction Category<br>
+                  <select id="transactionCategory" class="select  p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0 text-base">
+                      <option id="transactionCategoryFirstChild" disabled selected>select transaction Category</option>
+                      <option>Food</option>
+                      <option>Rent</option>
+                      <option>Travel</option>
+                      <option>Bills</option>
+                      <option>Daily</option>
+                      <option>Health</option>
+                      <option>Bkash</option>
+                      <option>Nagad</option>
+                      <option>Stationary</option>
+                      <option>Shopping</option>
+                      <option>Freelance</option>
+                      <option>Medical</option>
+                      <option>Other</option>
+                    </select>            
+              </label>
+              <label for="" class="my-4 block">Transaction Date<br>
+                  <input  id="transactionDate" type="date" name="" class="p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0">            
+              </label>
+              <label for="" class="my-4 block">Transaction Time<br>
+                  <input  id="transactionTime" type="time" name="" class="p-2 focus:ring-blue focus:ring-2 outline-none rounded-sm w-full mt-1 bg-gray-700 border-1 border-gray-500 focus:border-0">            
+              </label>
+              <div class="flex justify-end items-center gap-2 flex-wrap">
+                  <button id="cancel" class="btn bg-red hover:btn-error text-white rounded-sm">Cancel</button>
+                  <button id="create" class="btn bg-green hover:btn-success text-white rounded-sm">Create</button>
+              </div>
+          </div>
+        </div>
+        <div id="Transaction" class="pt-10 lg:pt-5">
+          <h1 class="text-t1 text-3xl font-medium my-5">Transaction History</h1>
+          <div class="overflow-x-auto">
+            <table class="table text-t1 text-base border-gray-500 border rounded-none ">
+              <!-- head -->
+              <thead  class="text-t1 text-xl font-medium bg-gray-700">
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody id="history">
+              </tbody>
+            </table>
+         </div>
+        </div>
+      </main>
+  
+      </div>
+    <script>
+      tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          t1: 'white',
+          red: '#ED3535',
+          green: '#38C46B',
+          blue: '#0E4DFB',
+          yellow: '#F8CB01',
+        }
+      }
+    }
+  }
+// create ar js 
+  function getInputValue(inputId){
+    const inputFiled = document.getElementById(inputId);
+    const inputValue = inputFiled.value;
+    inputFiled.value = '';
+    return inputValue;
+};
+  function getElementInnerText(inputId){
+    return Number(document.getElementById(inputId).innerText);
+};
+  function setElementInnerText(elementId,total){
+    const element = document.getElementById(elementId);
+    element.innerText= total;
+  };
+  document.getElementById('create').addEventListener('click', function(){
+      const transactionTitle = getInputValue('transactionTitle'); 
+      const transactionAmount = getInputValue('transactionAmount'); 
+      const transactionType = getInputValue('transactionType');
+      const transactionCategory = getInputValue('transactionCategory');
+      const transactionDate = getInputValue('transactionDate'); 
+      const transactionTime = getInputValue('transactionTime');
+      const transactionCategoryFirstChild = document.getElementById('transactionCategoryFirstChild');
+      const transactionTypeFirstChild = document.getElementById('transactionTypeFirstChild');
+
+      if( transactionCategory === transactionCategoryFirstChild.value || transactionCategory.trim() == '' || transactionType === transactionTypeFirstChild.value || transactionType.trim() == '' || transactionAmount.trim() == '' || transactionTitle.trim() == '' ||  transactionTime.trim() == '' || transactionDate.trim() == '' ){
+        alert('please Enter Something');
+        return;
+      }
+      const history = document.getElementById('history');
+      const tr = document.createElement('tr');
+      const th = document.createElement('th');
+      th.innerHTML = `#`;
+      const td1 = document.createElement('td');
+      td1.innerHTML = `${transactionTitle}`;
+      const td2 = document.createElement('td');
+      td2.innerHTML = `${transactionAmount}`;
+      const td3 = document.createElement('td');
+      td3.innerHTML = `${transactionCategory}`;
+      const td4 = document.createElement('td');
+      if(transactionType == 'Income'){
+        td4.innerHTML = `<button class="btn btn-sm bg-green hover:btn-success text-white rounded-sm">income</button>`;
+      }
+      else if(transactionType == 'Expense'){
+        td4.innerHTML = `<button class="btn btn-sm bg-red hover:btn-error text-white rounded-sm">expense</button>`;
+      }
+      const td5 = document.createElement('td');
+      td5.innerHTML = `${transactionDate}`;
+      const td6 = document.createElement('td');
+      td6.innerHTML = `${transactionTime}`;
+      tr.appendChild(th);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tr.appendChild(td4);
+      tr.appendChild(td5);
+      tr.appendChild(td6);
+      history.appendChild(tr);
+
+      const wallet = getElementInnerText('wallet');
+      const income = getElementInnerText('income');
+      const expense = getElementInnerText('expense');
+      const transactions = getElementInnerText('transactions');
+      const transactionAmountNum = Number(transactionAmount);
+
+      if(transactionType == 'Income'){
+        const totalWallet = wallet  + transactionAmountNum;
+        const totalIncome = income  + transactionAmountNum;
+        const totalTransactions = transactions  + transactionAmountNum;
+        setElementInnerText('wallet',totalWallet)
+        setElementInnerText('income',totalIncome)
+        setElementInnerText('transactions',totalTransactions)
+      }
+      else if(transactionType == 'Expense'){
+        const totalWallet = wallet  - transactionAmountNum;
+        const totalExpense = expense  + transactionAmountNum;
+        const totalTransactions = transactions  + transactionAmountNum;
+        setElementInnerText('wallet',totalWallet)
+        setElementInnerText('expense',totalExpense)
+        setElementInnerText('transactions',totalTransactions)
+      }
+  });
+  document.getElementById('cancel').addEventListener('click', function(){
+      const transactionTitle = getInputValue('transactionTitle'); 
+      const transactionAmount = getInputValue('transactionAmount'); 
+      const transactionType = getInputValue('transactionType');
+      const transactionCategory = getInputValue('transactionCategory');
+      const transactionDate = getInputValue('transactionDate'); 
+      const transactionTime = getInputValue('transactionTime');
+
+
+  });
+    </script>
+</body>
+</html>
